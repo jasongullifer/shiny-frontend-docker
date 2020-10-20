@@ -10,7 +10,6 @@ RUN install2.r -e devtools here psych plumber doParallel groupdata2 dataPreparat
 
 RUN R -e 'devtools::install_github(c("jasongullifer/languageentropy", "rstudio/plumber"))'
 
-
 COPY languageEntropyPredictor_0.0.0.9000.tar.gz /packages/languageEntropyPredictor_0.0.0.9000.tar.gz
 RUN install2.r -e /packages/languageEntropyPredictor_0.0.0.9000.tar.gz
 
@@ -22,4 +21,4 @@ EXPOSE 80
 EXPOSE 3838
 
 ENTRYPOINT ["R", "-e", \
-    "languageEntropyPredictor::runShinyFrontend()"]
+    "languageEntropyPredictor::runShinyFrontend(host='0.0.0.0', port = 8000, api_url='206.12.95.103', api_port = 8080)"]

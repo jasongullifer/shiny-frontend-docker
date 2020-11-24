@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install libcurl4-openssl-dev libv8-dev -y &&\
 
 # Download and install library
 RUN install2.r -e shinydashboard shinyjs V8 tibble stringr digest jsonlite dplyr config DT ggplot2 
-RUN install2.r -e devtools here psych plumber doParallel groupdata2 dataPreparation glmnet broom usethis GPArotation tidyr png
+RUN install2.r -e devtools here psych plumber doParallel groupdata2 dataPreparation glmnet broom usethis GPArotation tidyr png rmarkdown
 #install.packages(c('shinydashboard', 'shinyjs', 'V8'))"
 
 RUN R -e 'devtools::install_github(c("jasongullifer/languageentropy", "rstudio/plumber"))'

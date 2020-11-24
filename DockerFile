@@ -10,8 +10,8 @@ RUN install2.r -e devtools here psych plumber doParallel groupdata2 dataPreparat
 
 RUN R -e 'devtools::install_github(c("jasongullifer/languageentropy", "rstudio/plumber"))'
 
-COPY languageEntropyPredictor_0.0.0.9000.tar.gz /packages/languageEntropyPredictor_0.0.0.9000.tar.gz
-RUN install2.r -e /packages/languageEntropyPredictor_0.0.0.9000.tar.gz
+COPY languageEntropyPredictor_0.0.1.0000.tar.gz /packages/languageEntropyPredictor_0.0.1.0000.tar.gz
+RUN install2.r -e /packages/languageEntropyPredictor_0.0.1.0000.tar.gz
 
 # copy the app to the image COPY shinyapps /srv/shiny-server/
 # make all app files readable (solves issue when dev in Windows, but building in Ubuntu)
